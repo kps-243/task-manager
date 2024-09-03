@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Task, TaskStatus } from '../model/task'; // Chemin à vérifier
 import { CRUDTaskService } from '../interfaces/crudtask-service'; // Chemin à vérifier
+import { from, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CRUDTaskListServiceService implements CRUDTaskService {
-  currentList: Task[] = [];
+  currentList: Task[];
 
   constructor() {
     this.currentList = [
@@ -18,9 +19,12 @@ export class CRUDTaskListServiceService implements CRUDTaskService {
       { title: 'Tâche entamée 3', description: 'Cette tâche est également entamée !', state: TaskStatus.EN_COURS, creationDate: new Date(2024, 4, 9) },
     ];
   }
-
-  getTasks(): Task[] {
+  getAllTasks(): Task[] {
     return this.currentList;
+  } 
+
+  getTasks(): Observable<Task[]> {
+    return of(this.currentList);
   }
 
   storeTask(task: Task): void {

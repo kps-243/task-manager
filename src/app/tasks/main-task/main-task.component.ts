@@ -9,10 +9,14 @@ import { TaskFacade } from '../services/task-facade.service'; // Chemin à véri
 })
 export class MainTaskComponent implements OnInit {
   archivedTasks: Task[] = []; // Propriété pour stocker les tâches terminées
-
+  tasks : Task[] = [];
   constructor(private TaskFacade: TaskFacade) {}
 
   ngOnInit(): void {
+    this.TaskFacade.getTasks().subscribe(tasks => {
+      this.tasks = tasks;
+      console.log(this.tasks);
+    });
     this.archivedTasks = this.TaskFacade.getTasksByStatus(TaskStatus.A_FAIRE);
   }
 }

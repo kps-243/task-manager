@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CRUDTaskListServiceService } from './crudtask-list-service.service'; // Chemin à vérifier
 import { ByStatutTaskListService } from './by-statut-task-list-service.service'; // Chemin à vérifier
 import { Task, TaskStatus } from '../model/task'; // Chemin à vérifier
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class TaskFacade {
   ) {}
 
   // Méthodes CRUD
-  getTasks(): Task[] {
+  getTasks(): Observable<Task[]> {
     return this.crudService.getTasks();
   }
 
