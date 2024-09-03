@@ -1,15 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Task } from '../model/task';
-import { TaskComponent } from '../task/task.component';
 
 @Component({
   selector: 'app-task-list',
-  // standalone: true,
-  // imports: [TaskComponent],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.css'
+  styleUrls: ['./task-list.component.css']
 })
-
 export class TaskListComponent {
-  @Input() currentTaskListComponent!: Task[];
+  @Input() currentTaskListComponent: Task[] = []; // Assurez-vous que ce soit correctement déclaré
 }
