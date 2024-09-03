@@ -3,7 +3,7 @@ import { TaskStatus } from '../model/task';
 
 @Directive({
   selector: '[colorTask]',
-  standalone: true
+  // standalone: true
 })
 
 export class ColorTaskDirective implements OnChanges {

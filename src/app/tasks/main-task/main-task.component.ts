@@ -6,8 +6,8 @@ import {Task, TaskStatus} from "../model/task";
   selector: 'app-main-task',
   templateUrl: './main-task.component.html',
   styleUrls: ['./main-task.component.css'],
-  standalone: true,
-  imports: [TaskListComponent]
+  // standalone: true,
+  // imports: [TaskListComponent]
 })
 
 export class MainTaskComponent implements OnInit {

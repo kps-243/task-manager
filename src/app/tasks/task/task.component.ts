@@ -4,8 +4,8 @@ import { ColorTaskDirective } from './color-task.directive';
 import { FormatdatePipe } from './formatdate.pipe';
 @Component({
   selector: 'app-task',
-  standalone: true,
-  imports: [ColorTaskDirective, FormatdatePipe],
+  // standalone: true,
+  // imports: [ColorTaskDirective, FormatdatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
