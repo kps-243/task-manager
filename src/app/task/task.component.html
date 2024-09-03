@@ -1,5 +1,5 @@
-<h1>Bienvenue sur ma première page Angular ! </h1>
-
-<h2>Le titre : {{ currentTaskComponent.title }}</h2>
-<p>La description : {{ currentTaskComponent.description }}</p>
-<p>L'état : {{ currentTaskComponent.state }}</p>
+<div [colorTask]="currentTaskComponent.state" class="task-item">
+    <h2>{{ currentTaskComponent.title }}</h2>
+    <p>{{ currentTaskComponent.description }}</p>
+    <p>{{ currentTaskComponent.state }}</p>
+</div>
