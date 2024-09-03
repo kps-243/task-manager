@@ -1,22 +1,14 @@
-import {Component, OnInit,} from '@angular/core';     // importe la méthode "OnInit" de Angular
+import {Component, OnInit, Input} from '@angular/core';     // On ajoute l'import de 'Input'
 import { Task, TaskStatus } from '../model/task';
 
 @Component({
-  selector: 'app-task',                              // indique la syntaxe permettant d'utiliser ce composant dans le template principal
+  selector: 'app-task',
   standalone: true,
   imports: [],
-  templateUrl: './task.component.html',               // précise le template du composant
-  styleUrl: './task.component.css'                    // précise la feuille de style du composant
+  templateUrl: './task.component.html',
+  styleUrl: './task.component.css'
 })
 
-export class TaskComponent implements OnInit {
-  task!: Task;                                        // implémente une classe "Task" vide au chargement de la page (défini par 'OnInit')
-
-  ngOnInit(): void {                                  // Définit ce qui va ce passer au chargement de la page
-    this.task = {                                     // On remplit les données de notre classe "Task"
-      title: 'Découvrir Angular',
-      description: 'Manipuler un petit peu pour découvrir l\'univers d`\'Angular',
-      state: TaskStatus.EN_COURS
-    };
-  }
+export class TaskComponent {
+  @Input() currentTaskComponent!: Task;                     // '@Input' indique qu'il accepte des données en entrée
 }
